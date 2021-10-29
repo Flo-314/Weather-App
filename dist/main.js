@@ -1,0 +1,1 @@
+!async function(){try{const a=await fetch("https://api.openweathermap.org/data/2.5/weather?q=Buenos%20Aires&appid=1939b0b8b76c93cf95438f0501c7ef00",{mode:"cors"}),t=await a.json();console.log(t);const o=t.main.temp,e=t.main.temp_max,n=t.main.temp_min;console.log(o,e,n)}catch(a){prompt(a)}}();
