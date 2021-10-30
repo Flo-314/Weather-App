@@ -23,6 +23,7 @@ header input{
     margin-top: 25px;
     border: none;
     padding-left: 20px;
+    font-size: 20px;
 }
 header button{
     background-color: rgb(33, 33, 33);
@@ -40,39 +41,46 @@ header button:hover {
     transition:  all 0.7s;
     background-color: rgb(49, 49, 49);
 
-
 }
 main{
-    margin: 20vh;
+    margin-top: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#location{
+    font-size: 40px;
+    font-weight: 600;
 }
 #weatherContainer{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#generalInfoContainer{}
-#generalInfoContainer #location{
-    font-size: 35px;
-    font-weight: 500;
-    margin-bottom: 15px;
-
+#generalInfoContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 25px;
 }
-#generalInfoContainer #temp{
-    font-size: 45px;
-    font-weight: 800;
+#temp{
+    font-size: 50px;
+    font-weight: 700;
 }
-#generalInfoContainer #tempVar{
-    font-size: 25px;
+#tempVar{
+    font-size: 27px;
 }
 #miscContainer{
-    margin-top: 57px;
-    font-size: 18px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+margin: 25px;
+font-size: 20px;
 }
-#miscContainer *{
-    margin: 7px;
-}
-main img{
+.img{
     width: 170px;
     height: 140px;
-    border: none;
 }

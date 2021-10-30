@@ -38,6 +38,7 @@ const domMethods = (() => {
     const domPressure = document.querySelector('#pres');
     const domWSpeed = document.querySelector('#wSpeed');
     const image = document.querySelector('img');
+    image.classList.add('img');
 
     const tempVar = `${Math.round(data.tempMin - 273)}°C - ${Math.round(data.tempMax - 273)}°C`;
 
@@ -68,3 +69,4 @@ const domMethods = (() => {
   return { inputForm, printMain };
 })();
 domMethods.inputForm();
+domMethods.printMain('Buenos Aires');
