@@ -1,7 +1,3 @@
-import sunImage from '../images/sun.png';
-import rainingImage from '../images/raining.png';
-import cloudyImage from '../images/cloudy.png';
-
 const apiMethods = (() => {
   const getApiRequest = async (city) => {
     const link = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=1939b0b8b76c93cf95438f0501c7ef00`;
@@ -50,13 +46,13 @@ const domMethods = (() => {
     domTemp.textContent = `${Math.round(data.temp - 273)}°C`;
     domTempVar.textContent = tempVar;
     domHumidity.textContent = `Humidity: ${data.humidity}%`;
-    domPressure.textContent = `Pressure: ${data.pressure}Torr`;
+    domPressure.textContent = `Pressure: ${data.pressure}Pascals`;
     domWSpeed.textContent = `Wind Speed: ${data.wind}m/s`;
 
-    if (data.weatherStatus === 'Rain' || data.weatherStatus === 'Snow') { image.src = rainingImage; } else if (data.weatherStatus === 'Clouds') {
-      image.src = cloudyImage;
+    if (data.weatherStatus === 'Rain' || data.weatherStatus === 'Snow') { image.src = 'https://cdn-icons.flaticon.com/png/512/3093/premium/3093390.png?token=exp=1635635211~hmac=c8e25fa19c66ee608ecbeeef3118a385'; } else if (data.weatherStatus === 'Clouds') {
+      image.src = 'https://cdn-icons-png.flaticon.com/512/3208/3208752.png';
     } else {
-      image.src = sunImage;
+      image.src = 'https://cdn-icons-png.flaticon.com/512/1163/1163662.png';
     }
   };
   const inputForm = () => {
