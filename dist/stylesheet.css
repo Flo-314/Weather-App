@@ -75,12 +75,11 @@ main{
 #miscContainer{
 display: flex;
 justify-content: center;
-align-items: center;
 flex-direction: column;
 margin: 25px;
 font-size: 20px;
 }
 .img{
-    width: 170px;
+    width: 150px;
     height: 140px;
 }
