@@ -1,3 +1,7 @@
+import sunImage from '../images/sun.png';
+import rainingImage from '../images/raining.png';
+import cloudyImage from '../images/cloudy.png';
+
 const apiMethods = (() => {
   const getApiRequest = async (city) => {
     const link = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=1939b0b8b76c93cf95438f0501c7ef00`;
@@ -49,10 +53,10 @@ const domMethods = (() => {
     domPressure.textContent = `Pressure: ${data.pressure}Torr`;
     domWSpeed.textContent = `Wind Speed: ${data.wind}m/s`;
 
-    if (data.weatherStatus === 'Rain' || data.weatherStatus === 'Snow') { image.src = '../images/raining.png'; } else if (data.weatherStatus === 'Clouds') {
-      image.src = '../images/cloudy.png';
+    if (data.weatherStatus === 'Rain' || data.weatherStatus === 'Snow') { image.src = rainingImage; } else if (data.weatherStatus === 'Clouds') {
+      image.src = cloudyImage;
     } else {
-      image.src = '../images/sun.png';
+      image.src = sunImage;
     }
   };
   const inputForm = () => {
