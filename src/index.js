@@ -10,25 +10,29 @@ const apiMethods = (() => {
       const data = await fetch(link, { mode: 'cors' });
       weatherData = await data.json();
     } catch (error) {
-      // eslint-disable-next-line no-console
-      console.log(error);
+      // eslint-disable-next-line no-alert
+      prompt(error);
     }
     return weatherData;
   };
+  // eslint-disable-next-line consistent-return
   const getData = async (city) => {
-    const weatherData = await getApiRequest(city);
-    const location = weatherData.name;
-    const { temp } = weatherData.main;
-    const tempMin = weatherData.main.temp_min;
-    const tempMax = weatherData.main.temp_max;
-    const { humidity } = weatherData.main;
-    const wind = weatherData.wind.speed;
-    const { pressure } = weatherData.main;
-    const weatherStatus = weatherData.weather[0].main;
-    return {
-      location, temp, tempMin, tempMax, humidity, wind, pressure, weatherStatus,
+    try {
+      const weatherData = await getApiRequest(city);
+      const location = weatherData.name;
+      const { temp } = weatherData.main;
+      const tempMin = weatherData.main.temp_min;
+      const tempMax = weatherData.main.temp_max;
+      const { humidity } = weatherData.main;
+      const wind = weatherData.wind.speed;
+      const { pressure } = weatherData.main;
+      const weatherStatus = weatherData.weather[0].main;
+      return {
+        location, temp, tempMin, tempMax, humidity, wind, pressure, weatherStatus,
 
-    };
+      };
+    // eslint-disable-next-line no-use-before-define
+    } catch (error) { domMethods.printError(); }
   };
   return { getData };
 })();
@@ -62,15 +66,19 @@ const domMethods = (() => {
   const inputForm = () => {
     const form = document.querySelector('form');
     const input = document.querySelector('input');
-    const button = document.querySelector('button');
-    button.addEventListener('click', async () => {
-      await printMain(input.value);
-    });
+
     form.onsubmit = async () => {
       await printMain(input.value);
     };
   };
-  return { inputForm, printMain };
+  const printError = () => {
+    const input = document.querySelector('#inputError');
+    input.textContent = 'Invalid location, please, introduce another city.';
+    setTimeout(() => {
+      input.textContent = '';
+    }, 2500);
+  };
+  return { inputForm, printMain, printError };
 })();
 domMethods.inputForm();
 domMethods.printMain('Buenos Aires');

@@ -24,6 +24,11 @@ header input{
     border: none;
     padding-left: 20px;
     font-size: 20px;
+    margin-right: 40px;
+}
+header #inputError{
+    font-size: 19px;
+    color: red;
 }
 header button{
     background-color: rgb(33, 33, 33);
