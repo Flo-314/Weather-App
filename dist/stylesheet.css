@@ -25,10 +25,22 @@ header input{
     padding-left: 20px;
 }
 header button{
+    background-color: rgb(33, 33, 33);
+    color: white;
+    font-size: 18px;
     margin: 5px;
-    border-radius: 7px;
+    border-radius: 20px;
     height: 50px;
-    width: 50px;
+    width: 105px;
+    border: none;
+    transition:  all 0.4s;
+
+}
+header button:hover {
+    transition:  all 0.7s;
+    background-color: rgb(49, 49, 49);
+
+
 }
 main{
     margin: 20vh;
@@ -58,4 +70,9 @@ main{
 }
 #miscContainer *{
     margin: 7px;
+}
+main img{
+    width: 170px;
+    height: 140px;
+    border: none;
 }
